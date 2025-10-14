@@ -1,4 +1,4 @@
-name: build-images
+name: Build images
 
 on:
   workflow_dispatch:
@@ -9,6 +9,8 @@ on:
       - "docker/**"
       - "scripts/build.sh"
       - ".github/workflows/build.yml"
+  schedule:
+    - cron: "0 12 * * *"
 
 jobs:
   docker-images:
@@ -16,7 +18,12 @@ jobs:
       fail-fast: false
       matrix:
         arch: [x86_64, aarch64]
-    runs-on: ubuntu-latest
+        include:
+          - arch: x86_64
+            os: ubuntu-latest
+          - arch: aarch64
+            os: ubuntu-latest-arm
+    runs-on: ${{ matrix.os }}
     permissions:
       contents: read
       packages: write
