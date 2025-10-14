@@ -1,0 +1,4 @@
+This repository provides container build scripts and prebuilt images for Arch Linux.
+All build scripts are licensed under the MIT License (see LICENSE file).
+The resulting container images include Arch Linux software, which is licensed under
+its respective upstream licenses. See /usr/share/licenses in the image for details.
