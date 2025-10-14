@@ -1,0 +1,9 @@
+FROM archlinux:base
+
+RUN set -euo pipefail \
+  && pacman-key --init \
+  && pacman-key --populate archlinux \
+  && pacman -Sy --noconfirm \
+  && pacman -Syu --noconfirm --needed base-devel git git-lfs sudo pacman-contrib rsync gnupg jq zstd \
+  && pacman -Scc --noconfirm \
+  && rm -rf /var/cache/pacman/pkg/*
