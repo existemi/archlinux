@@ -4,6 +4,8 @@ This repository builds and publishes minimal Arch Linux container images that ar
 tuned for use as build environments. Multi-architecture builds are supported for
 both `linux/amd64` and `linux/arm64` targets.
 
+[![Build images](https://github.com/existemi/archlinux/actions/workflows/build.yml/badge.svg)](https://github.com/existemi/archlinux/actions/workflows/build.yml)
+
 ## Image overview
 
 - `archlinux:base` – x86_64 image derived from the upstream `archlinux:base`
