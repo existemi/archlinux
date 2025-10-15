@@ -50,4 +50,6 @@ FROM scratch
 COPY --from=bootstrap /rootfs/ /
 
 ENV LANG=C.UTF-8
+ENV PATH="/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+
 CMD ["/bin/bash"]
